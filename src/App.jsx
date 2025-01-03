@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button"
-import Navbar from "./components/ui/navbar"
-
+import Navbar from "./Navbar"
+import Content from "./components/content"
 
 function App() {
   return (
     <>
-      <div>
-      <Navbar />
-      </div>
+
+     <Navbar/>
+     <Content/>
     </>
   )
 }

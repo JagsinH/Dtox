@@ -64,3 +64,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+#poster{
+  background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMndpdDFpYW82eTVyYjFwYmlvbGpsOHZsemRkZmxpdWRnN3kyaDcxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xUA7b4arnbo3THfzi0/giphy.gif");
+  background-size:cover;
+
+  height:100vh;
+  padding:0;
+  margin:0;
+}
