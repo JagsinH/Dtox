@@ -6,19 +6,16 @@ function Navbar() {
 
     return (
         <nav className="bg-black shadow-lg w-screen">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo/Brand */}
                     <div className="flex-shrink-0">
-
-
-                    
-                        
+                        <div className="flex items-center space-x-3">
+                    <img src="src\assets\logo.webp" alt="logo" srcset="" className='h-10 w-10 rounded-md'/>
                         <a href="/" className="text-white font-bold text-3xl">
-                        
                             Dtox
                         </a>
-                        
+                        </div>
                     </div>
 
                     {/* Desktop Menu */}
@@ -80,4 +77,4 @@ function Navbar() {
     );
 };
 
-export default Navbar;
+export default Navbar;
