@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import { a } from 'react-router-dom';
 
 function Navbar() {
@@ -12,27 +13,27 @@ function Navbar() {
                     <div className="flex-shrink-0">
                         <div className="flex items-center space-x-3">
                     <img src="src\assets\logo.webp" alt="logo" srcset="" className='h-10 w-10 rounded-md'/>
-                        <a href="/" className="text-white font-bold text-3xl">
+                        <Link to="/" className="text-white font-bold text-3xl">
                             Dtox
-                        </a>
+                        </Link>
                         </div>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-4">
-                            <a href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
+                            <Link to="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
                                 Home
-                            </a>
-                            <a href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
+                            </Link>
+                            <Link to="/About" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
                                 About
-                            </a>
-                            <a href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
-                                Services
-                            </a>
-                            <a href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
-                                Contact
-                            </a>
+                            </Link>
+                            <Link to="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
+                             Services
+                            </Link>
+                            <Link to="/Login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-300">
+                               login
+                            </Link>
                         </div>
                     </div>
 
@@ -58,18 +59,18 @@ function Navbar() {
             {isOpen && (
                 <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
+                        <Link on="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
                             Home
-                        </a>
-                        <a href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
+                        </Link>
+                        <Link to="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
                             About
-                        </a>
-                        <a href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
+                        </Link>
+                        <Link to="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
                             Services
-                        </a>
-                        <a href="/contact" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
-                            Contact
-                        </a>
+                        </Link>
+                        <Link to="/Login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md transition duration-300">
+                            login
+                        </Link>
                     </div>
                 </div>
             )}
