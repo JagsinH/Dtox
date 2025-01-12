@@ -16,7 +16,7 @@ const videos = [
 const VideoPlayer = () => {
     return (
         <>
-        <div className="text-4xl text-center mt-8">Watch our videos</div>
+        <div className="text-4xl text-center mt-8 text-white">Watch our videos</div>
         <div className="flex flex-wrap justify-center gap-4 p-4">
             {videos.map((video) => (
                 <div 
@@ -32,7 +32,7 @@ const VideoPlayer = () => {
                             allow="autoplay" 
                             allowFullScreen
                         />
-                        <div className="text-2xl text-black mt-4">{video.title}</div>
+                        <div className="text-2xl text-white mt-4">{video.title}</div>
                     </div>
                 </div>
             ))}

@@ -65,20 +65,35 @@
   }
 }
 
-#poster{
-  background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMndpdDFpYW82eTVyYjFwYmlvbGpsOHZsemRkZmxpdWRnN3kyaDcxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xUA7b4arnbo3THfzi0/giphy.gif");
-  background-size:cover;
-
-  height:100vh;
-  padding:0;
-  margin:0;
-}
-
 body{
-  background-color: #f4f4f4;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
-navbar{
-  background-color: #333;
-  color: white;
-  padding: 10px;
+
+.white-shadow {
+    text-shadow: 5px 7px 10px rgba(255, 255, 255, 0.3); /* White shadow with blur */
+    font-size: 3rem; /* Adjust text size as needed */
+    font-weight: bold;
+  
+}
+
+/* Target the scrollbar track and thumb */
+body::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Track background with reduced opacity */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Thumb (scroll handle) with reduced opacity */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Add hover effect for better visibility */
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8); /* Increase visibility on hover */
 }
