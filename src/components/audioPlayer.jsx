@@ -1,32 +1,32 @@
-const audioLinks = ['https://drive.google.com/file/d/1oz4jU-12xyz3ZrjnTDAo8y7yaHOCtEyh/view?usp=sharing','https://drive.google.com/uc?export=download&id=1oz4jU-12xyz3ZrjnTDAo8y7yaHOCtEyh']
-function AudioPlayer(){
-    
-    return (
-        <>
-        <div className="text-4xl text-white text-center">Listen to these audio</div>
-        <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Audio Player</h1>
+import React from 'react';
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {audioLinks.map((link, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center"
-          >
-            <p className="text-gray-600 mb-4">Audio {index + 1}</p>
-            <audio
-              controls
-              className="w-full"
-            >
-              <source src={link} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        ))}
-      </div>
+const ringtones = [
+  { title: "Relaxing 1", duration: "30s" },
+  { title: "Relaxing 2", duration: "25s" },
+  { title: "Relaxing 3", duration: "17s" },
+];
+
+const RingtoneCard = ({ title, duration }) => (
+  <div className="relative flex flex-col items-center bg-gradient-to-r from-purple-500 to-green-500 rounded-lg p-4 shadow-md">
+    <div className="flex items-center justify-center w-20 h-20 bg-gray-900 rounded-full">
+      <button className="text-white text-2xl font-bold">▶</button>
     </div>
-        </>
-    )
-}
+    <div className="mt-2 text-center">
+      <p className="text-white font-semibold">{title}</p>
+      <p className="text-white text-sm">{duration}</p>
+    </div>
+  </div>
+);
 
-export default AudioPlayer;
+const RingtoneGallery = () => (
+  <div className="min-h-screen bg-black p-10">
+    <h1 className="text-3xl text-white font-bold text-center mb-6">Ringtones</h1>
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-center">
+      {ringtones.map((ringtone, index) => (
+        <RingtoneCard key={index} title={ringtone.title} duration={ringtone.duration} />
+      ))}
+    </div>
+  </div>
+);
+
+export default RingtoneGallery;

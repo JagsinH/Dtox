@@ -7,6 +7,7 @@ import VideoPlayer from "./components/video_player"
 import Services from "./components/services"  
 import { createBrowserRouter , RouterProvider} from "react-router-dom"
 import AudioPlayer from "./components/audioPlayer"
+import Footer from "./components/footer"
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +18,9 @@ function App() {
       <Home/>
       <Content/>
       <VideoPlayer/>
-      <AudioPlayer/></>
+      <AudioPlayer/>
+      <Footer/>
+      </>
     },
     {
       path: "/login",  

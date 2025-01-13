@@ -19,7 +19,7 @@ const videos = [
 const VideoPlayer = () => {
     return (
         <>
-        <div className="text-4xl text-center mt-8 text-white" id="section1">Watch our videos</div>
+        <div className="text-4xl text-center mt-8 text-white font-bold" id="section1">Watch our videos</div>
         <div className="flex flex-wrap justify-center gap-4 p-4">
             {videos.map((video) => (
                 <div 
