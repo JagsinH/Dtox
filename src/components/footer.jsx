@@ -7,7 +7,6 @@ const Footer = () => (
     <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       {/* Logo Section */}
       <div className="text-lg font-semibold flex items-center text-gray-100">
-      <img src="src\assets\logo.webp" alt="logo" srcset="" className='h-10 w-10 rounded-md mx-2'/>
         Dtox
       </div>
 

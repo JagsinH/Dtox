@@ -11,7 +11,6 @@ function Navbar() {
                     {/* Logo/Brand */}
                     <div className="flex-shrink-0">
                         <div className="flex items-center space-x-3">
-                    <img src="src\assets\logo.webp" alt="logo" srcset="" className='h-10 w-10 rounded-md'/>
                         <Link to="/" className="text-white font-bold text-3xl">
                             Dtox
                         </Link>
