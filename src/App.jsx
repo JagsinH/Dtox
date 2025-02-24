@@ -4,7 +4,7 @@ import Home from "./components/Home"
 import Login from "./components/Login"
 import About from "./components/About"
 import VideoPlayer from "./components/video_player"
-import Services from "./components/Services"  
+import Media from "./components/Media_page"  
 import { createBrowserRouter , RouterProvider} from "react-router-dom"
 import AudioPlayer from "./components/audioPlayer"
 import Footer from "./components/footer"
@@ -34,13 +34,14 @@ function App() {
       element: <>
       <Navbar/>
       <About/>
+      <Footer/>
       </>
     },
     {
-      path: "/services",  
+      path: "/media",  
       element: <>
       <Navbar/>
-      <Services/>
+      <Media/>
       </>
     }
 
