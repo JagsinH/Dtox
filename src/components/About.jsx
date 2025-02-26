@@ -36,7 +36,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-black-900 to-black-800 overflow-hidden">
     
       <div className="absolute inset-0 opacity-10">
         <FloatingElement delay={0}>
