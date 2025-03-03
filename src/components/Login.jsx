@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Droplets } from 'lucide-react';
-
+import supabase from '@/lib/supabaseClient.js';
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -11,10 +11,43 @@ const AuthForm = () => {
     password: '',
     confirmPassword: ''
   });
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+
+    let data, error;
+
+    if (isLogin) {
+      // Login
+      const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
+      });
+      data = loginData;
+      error = loginError;
+    } else {
+      // Sign up
+      if (formData.password !== formData.confirmPassword) {
+        setMessage('Passwords do not match');
+        return;
+      }
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+      });
+      data = signUpData;
+      error = signUpError;
+    }
+
+    if (error) {
+      setMessage(error.message);
+      return;
+    }
+    if (data) {
+      setMessage(isLogin ? 'Logged in successfully' : 'User account created successfully');
+    }
   };
 
   const handleChange = (e) => {
@@ -35,15 +68,15 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center ">
-      <div className="bg-gradient-to r from-gray-300  to black-100 p-8 rounded-lg shadow-lg w-96 transform transition-all  ">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="bg-gray-700 p-8 rounded-lg shadow-lg w-96 transform transition-all">
         {/* Logo and Brand Section */}
         <div className="flex flex-col items-center mb-8">
           <div className="flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4 transform transition-all duration-500 hover:rotate-180">
             <Droplets size={32} className="text-gray-600" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-500 tracking-wider">Dtox</h1>
-          <p className="text-gray-500 text-sm mt-2">Refresh Your Digital Life</p>
+          <h1 className="text-4xl font-bold text-gray-900 tracking-wider">Dtox</h1>
+          <p className="text-gray-900 text-sm mt-2">Refresh Your Digital Life</p>
         </div>
 
         {/* Toggle Buttons */}

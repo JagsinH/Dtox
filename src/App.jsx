@@ -9,6 +9,8 @@ import { createBrowserRouter , RouterProvider} from "react-router-dom"
 import AudioPlayer from "./components/audioPlayer"
 import Footer from "./components/footer"
 
+
+
 function App() {
   const router = createBrowserRouter([
     {
